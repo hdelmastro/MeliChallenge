@@ -1,4 +1,4 @@
-# MeliChallenge en 2 días - Desaprobado por no hacer manejo de Excepciones, porque los test unitarios funcionan solo on-line y porque no tenia base de datos local (No se especificaba nada al respecto en el challenge así que hice lo que pude con el tiempo que tenía).
+# MeliChallenge - Mutant en 2 días - Desaprobado por no hacer manejo de Excepciones, porque los test unitarios funcionan solo on-line y porque no tenia base de datos local (No se especificaba nada al respecto en el challenge así que hice lo que pude con el tiempo que tenía).
 
 _API de verificacion de ADN Mutante_
 
