@@ -4,20 +4,24 @@ import java.io.Serializable;
 
 public class Stats implements Serializable {
 
-	private Integer countMutantDna;
-	private Integer countHumanDna;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Long countMutantDna;
+	private Long countHumanDna;
 	private Double ratio;
 	
-	public Integer getCountMutantDna() {
+	public Long getCountMutantDna() {
 		return countMutantDna;
 	}
-	public void setCountMutantDna(Integer countMutantDna) {
+	public void setCountMutantDna(Long countMutantDna) {
 		this.countMutantDna = countMutantDna;
 	}
-	public Integer getCountHumanDna() {
+	public Long getCountHumanDna() {
 		return countHumanDna;
 	}
-	public void setCountHumanDna(Integer countHumanDna) {
+	public void setCountHumanDna(Long countHumanDna) {
 		this.countHumanDna = countHumanDna;
 	}
 	public Double getRatio() {

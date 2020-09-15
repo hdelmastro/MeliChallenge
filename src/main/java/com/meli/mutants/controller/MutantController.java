@@ -19,12 +19,12 @@ public class MutantController {
 	private IMutantService service;
 	
 	@PostMapping("/mutant")
-	public ResponseEntity<Boolean> mutant(@RequestBody DnaWrapper dnaBody){
+	public ResponseEntity<String> mutant(@RequestBody DnaWrapper dnaBody){
 		
-		Boolean body = false;
+		String body;
 		
 		body = service.isMutant(dnaBody.getDna());
 				
-		return new ResponseEntity<Boolean>(body, HttpStatus.OK);
+		return new ResponseEntity<String>(body, HttpStatus.OK);
 	}
 }

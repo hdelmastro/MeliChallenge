@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.FORBIDDEN)
 public class NoMutantFoundException extends RuntimeException {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8286298211722779009L;
+
 	public NoMutantFoundException() {
         super();
     }

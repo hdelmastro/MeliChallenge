@@ -1,4 +1,4 @@
-package com.meli.mutants.service;
+package com.meli.mutants.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.meli.mutants.business.IPathFinder;
 import com.meli.mutants.exceptions.NoMutantFoundException;
+import com.meli.mutants.persistence.MutantRepository;
+import com.meli.mutants.persistence.ProcessedRepository;
+import com.meli.mutants.persistence.model.MutantEntity;
+import com.meli.mutants.persistence.model.ProcessedEntity;
+import com.meli.mutants.service.IMutantService;
 import com.meli.mutants.utils.Checker;
 /**
  * 
@@ -16,7 +21,8 @@ import com.meli.mutants.utils.Checker;
  */
 @Service
 public class MutantService implements IMutantService {
-
+	
+	
 	@Value("${patternSize}")
 	private int patternSize;
 	
@@ -32,10 +38,17 @@ public class MutantService implements IMutantService {
 	@Autowired
 	private List<IPathFinder> finders;
 	
+	@Autowired
+	private MutantRepository mutantRepo;
+	
+	@Autowired
+	private ProcessedRepository processedRepo;
+	
 	@Override
-	public Boolean isMutant(String[] dna) {
+	public String isMutant(String[] dna) {
 		int patternCounter = 0;
 		int matrixLength = dna.length;
+		processedRepo.save(new ProcessedEntity());	
 		
 		int y = 0;
 		while (patternCounter < patterNumberThreshold && y < matrixLength ) {
@@ -56,9 +69,10 @@ public class MutantService implements IMutantService {
 			patternCounter = checker.findPatterns(patternCounter, patterNumberThreshold, finders.get(f).getAvailablePath(), patternSize, patternAlpahbet);		
 			f++;
 		}
-		
-		if(patternCounter >= patterNumberThreshold) {
-			return  true;
+				
+		if(patternCounter >= patterNumberThreshold) {			
+			MutantEntity saved = mutantRepo.save(new MutantEntity(dna));
+			return  saved.getId();
 		}else {
 			throw new NoMutantFoundException("No Mutant found");
 		}
