@@ -5,6 +5,7 @@ _API de verificacion de ADN Mutante_
 ## Comenzando 🚀
 
 _A continuación se detalla los paso para la puesta en funcionamiento de forma local de la aplicación._
+_También se encuentra disponible una versión en Heroku en la siguiente url https://meli-mutant-challenge.herokuapp.com/meli/_
 
 ### Pre-requisitos 📋
 
@@ -23,7 +24,7 @@ mvn spring-boot:run
 
 ## Pruebas ⚙️
 
-_Para probar el servicio puede hacer un POST a alguno de los siguientes endpoints:_
+_Para probar el servicio de varificacion de mutantes puede hacer un POST a alguno de los siguientes endpoints:_
 
 ```
 http://localhost:8080/meli/mutant/
@@ -49,7 +50,24 @@ Con body:
 
 ```
 
+_Para probar el servicio de stadisticas puede hacer un GET a alguno de los siguientes endpoints:_
 
+```
+http://localhost:8080/meli/stats/
+
+```
+
+_O puede probar la version que se encuentra desplegada aquí:_
+
+```
+https://meli-mutant-challenge.herokuapp.com/meli/stats/
+
+```
+
+
+## Nota 📄 
+
+* Me hubiese gustado tener tiempo para agregarle Swagger para documentar correctamente la API.
 
 ## Construido con 🛠️
 
