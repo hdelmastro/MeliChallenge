@@ -36,6 +36,19 @@ Con body:
 
 ```
 
+_O puede probar la version que se encuentra desplegada aquí:_
+
+```
+https://meli-mutant-challenge.herokuapp.com/meli/mutant/
+
+Con body:
+
+{ 
+	"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
+}
+
+```
+
 
 
 ## Construido con 🛠️
